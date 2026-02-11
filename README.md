@@ -1,8 +1,8 @@
-# BADGR Speed Reader
+# BADGR Bolt
 
 **by BADGR Technologies LLC**
 
-A high-performance Android speed reading application using Rapid Serial Visual Presentation (RSVP) with Optimal Recognition Point (ORP) technology.
+A high-performance Android speed reading application using Rapid Serial Visual Presentation (RSVP) with Optimal Recognition Point (ORP) technology. **BADGR Bolt** is designed for maximum reading efficiency, allowing you to consume content at lightning speeds.
 
 ---
 
@@ -11,6 +11,7 @@ A high-performance Android speed reading application using Rapid Serial Visual P
 - **RSVP Display**: One word at a time for maximum reading efficiency.
 - **ORP Highlighting**: Red letter marking for optimal eye fixation.
 - **Adjustable Speed**: 100-1500 WPM with customizable speed increments.
+- **Local File Import**: Import your own `.txt` files directly from your device using the Android Storage Access Framework.
 - **Punctuation Delay**: Intelligent slowing for commas, periods, and other punctuation for a more natural reading flow.
 - **Library Management**: Load and manage multiple books or text files.
 - **Settings Screen**: Toggle Dark Mode, Punctuation Delay, and adjust speed increments.
@@ -35,6 +36,7 @@ A high-performance Android speed reading application using Rapid Serial Visual P
 - **UI Framework**: Jetpack Compose
 - **Architecture**: State-driven with Kotlin Flows
 - **Build System**: Gradle (Kotlin DSL)
+- **CI/CD**: GitHub Actions for automated builds.
 
 ---
 
@@ -51,9 +53,9 @@ The app uses official BADGR Technologies LLC brand colors:
 
 ## 📖 How to Use the App
 
-1. **Splash Screen**: Upon launching, you'll see the BADGR Technologies intro.
+1. **Splash Screen**: Upon launching, you'll see the BADGR Bolt intro.
 2. **Reader**: Press the Play button to start reading. Use the slider or +/- buttons to adjust speed.
-3. **Library**: Tap the book icon to select different texts or add your own.
+3. **Library**: Tap the book icon to select different texts or **Import from Device** to load your own files.
 4. **Settings**: Tap the gear icon to toggle Dark Mode, Punctuation Delay, and adjust speed increments.
 5. **Outro**: A thank-you screen appears when you finish a reading session.
 

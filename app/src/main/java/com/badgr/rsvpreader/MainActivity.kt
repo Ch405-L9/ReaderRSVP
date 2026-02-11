@@ -4,6 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
+import android.net.Uri
+import android.widget.Toast
 import androidx.compose.animation.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -42,7 +45,26 @@ enum class Screen {
 
 class MainActivity : ComponentActivity() {
     private val rsvpEngine = RSVPEngine()
-    
+
+    private val openDocumentLauncher = registerForActivityResult(
+        ActivityResultContracts.OpenDocument()
+    ) { uri ->
+        uri?.let { processBookFile(it) }
+    }
+
+    private fun processBookFile(uri: Uri) {
+        try {
+            val inputStream = contentResolver.openInputStream(uri)
+            val content = inputStream?.bufferedReader()?.use { it.readText() }
+            if (content != null) {
+                rsvpEngine.loadText(content)
+                Toast.makeText(this, "Book loaded successfully", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            Toast.makeText(this, "Error loading file: ${e.message}", Toast.LENGTH_LONG).show()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -113,8 +135,8 @@ fun SplashScreen(onFinished: () -> Unit) {
             )
             Spacer(modifier = Modifier.height(24.dp))
             Text(
-                text = "BADGR Speed Reader",
-                fontSize = 28.sp,
+                text = "BADGR Bolt",
+                fontSize = 32.sp,
                 fontWeight = FontWeight.Bold,
                 color = BADGRBlue
             )
@@ -190,7 +212,7 @@ fun ReaderScreen(
                             modifier = Modifier.size(32.dp)
                         )
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("BADGR Reader", color = BADGRBlue, fontWeight = FontWeight.Bold)
+                        Text("BADGR Bolt", color = BADGRBlue, fontWeight = FontWeight.Bold)
                     }
                 },
                 actions = {
@@ -392,11 +414,13 @@ fun LibraryScreen(onBookSelected: (String) -> Unit, onBack: () -> Unit) {
                 )
                 Divider(color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f))
             }
-            item {
+                    item {
                 ListItem(
-                    headlineContent = { Text("Add New Book", color = BADGRBlue) },
-                    leadingContent = { Icon(Icons.Default.Add, contentDescription = null, tint = BADGRBlue) },
-                    modifier = Modifier.clickable { /* Simulated file picker */ }
+                    headlineContent = { Text("Import from Device", color = BADGRBlue) },
+                    leadingContent = { Icon(Icons.Default.FileUpload, contentDescription = null, tint = BADGRBlue) },
+                    modifier = Modifier.clickable { 
+                        openDocumentLauncher.launch(arrayOf("text/plain"))
+                    }
                 )
             }
         }

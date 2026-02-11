@@ -11,8 +11,8 @@ android {
         applicationId = "com.badgr.rsvpreader"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 2
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -20,9 +20,19 @@ android {
         }
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file(project.property("READER_KEYSTORE") as String)
+            storePassword = project.property("READER_STORE_PASS") as String
+            keyAlias = project.property("READER_KEY_ALIAS") as String
+            keyPassword = project.property("READER_KEY_PASS") as String
+        }
+    }
+
     buildTypes {
         release {
-            isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
