@@ -97,6 +97,9 @@ class MainActivity : ComponentActivity() {
                                     rsvpEngine.loadText(text)
                                     currentScreen = Screen.Reader
                                 },
+                                onImportRequested = {
+                                    openDocumentLauncher.launch(arrayOf("text/plain"))
+                                },
                                 onBack = { currentScreen = Screen.Reader }
                             )
                             Screen.Settings -> SettingsScreen(
@@ -384,7 +387,7 @@ fun ReaderScreen(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LibraryScreen(onBookSelected: (String) -> Unit, onBack: () -> Unit) {
+fun LibraryScreen(onBookSelected: (String) -> Unit, onImportRequested: () -> Unit, onBack: () -> Unit) {
     val books = listOf(
         "Sample Text" to "Welcome to BADGR Speed Reader! This is your rapid serial visual presentation tool. Adjust the speed slider below and press play to begin reading at your optimal pace.",
         "The Great Gatsby" to "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing any one,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'",
@@ -419,7 +422,7 @@ fun LibraryScreen(onBookSelected: (String) -> Unit, onBack: () -> Unit) {
                     headlineContent = { Text("Import from Device", color = BADGRBlue) },
                     leadingContent = { Icon(Icons.Default.FileUpload, contentDescription = null, tint = BADGRBlue) },
                     modifier = Modifier.clickable { 
-                        openDocumentLauncher.launch(arrayOf("text/plain"))
+                        onImportRequested()
                     }
                 )
             }
