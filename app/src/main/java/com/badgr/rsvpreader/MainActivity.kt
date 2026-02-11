@@ -25,6 +25,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
@@ -278,68 +279,51 @@ fun ReaderScreen(
                         .height(8.dp)
                         .clip(RoundedCornerShape(4.dp)),
                     color = BADGRBlue,
-                    trackColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f)
+                    trackColor = MaterialTheme.colorScheme.surfaceVariant
                 )
                 Spacer(modifier = Modifier.height(8.dp))
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Text(
-                        text = wordCount,
-                        fontSize = 14.sp,
-                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
-                    )
-                    Text(
-                        text = "${(progress * 100).toInt()}%",
-                        fontSize = 14.sp,
-                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
-                    )
-                }
+                Text(
+                    text = "${(progress * 100).toInt()}% • Word ${engine.getCurrentIndex()} of $wordCount",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                )
             }
             
             Spacer(modifier = Modifier.height(32.dp))
             
-            // WPM Control
-            Column(
+            // Speed controls
+            Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalAlignment = Alignment.CenterHorizontally
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    IconButton(onClick = { 
-                        wpm = (wpm - engine.speedIncrement).coerceAtLeast(100)
-                        engine.setWpm(wpm)
-                    }) {
-                        Icon(Icons.Default.Remove, contentDescription = "Decrease", tint = BADGRBlue)
-                    }
-                    Text(
-                        text = "$wpm WPM",
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = BADGRBlue,
-                        modifier = Modifier.padding(horizontal = 16.dp)
-                    )
-                    IconButton(onClick = { 
-                        wpm = (wpm + engine.speedIncrement).coerceAtMost(1500)
-                        engine.setWpm(wpm)
-                    }) {
-                        Icon(Icons.Default.Add, contentDescription = "Increase", tint = BADGRBlue)
-                    }
+                IconButton(onClick = { 
+                    wpm = (wpm - engine.getWpmIncrement()).coerceAtLeast(100)
+                    engine.setWpm(wpm)
+                }) {
+                    Icon(Icons.Default.Remove, contentDescription = "Decrease Speed", tint = BADGRBlue)
                 }
-                Slider(
-                    value = wpm.toFloat(),
-                    onValueChange = { 
-                        wpm = it.toInt()
-                        engine.setWpm(wpm)
-                    },
-                    valueRange = 100f..1500f,
-                    colors = SliderDefaults.colors(
-                        thumbColor = BADGRBlue,
-                        activeTrackColor = BADGRBlue,
-                        inactiveTrackColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f)
-                    ),
-                    modifier = Modifier.fillMaxWidth()
-                )
+                
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "$wpm",
+                        fontSize = 48.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = BADGRBlue
+                    )
+                    Text(
+                        text = "WPM",
+                        fontSize = 14.sp,
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                    )
+                }
+                
+                IconButton(onClick = { 
+                    wpm = (wpm + engine.getWpmIncrement()).coerceAtMost(1500)
+                    engine.setWpm(wpm)
+                }) {
+                    Icon(Icons.Default.Add, contentDescription = "Increase Speed", tint = BADGRBlue)
+                }
             }
             
             Spacer(modifier = Modifier.height(32.dp))
@@ -355,11 +339,16 @@ fun ReaderScreen(
                 }
                 
                 FloatingActionButton(
-                    onClick = {
-                        if (isPlaying) engine.pause() else engine.play(scope)
+                    onClick = { 
+                        if (isPlaying) engine.pause() else {
+                            scope.launch {
+                                engine.play { onFinished() }
+                            }
+                        }
                     },
                     containerColor = BADGRBlue,
-                    modifier = Modifier.size(72.dp)
+                    contentColor = Color.White,
+                    shape = RoundedCornerShape(50)
                 ) {
                     Icon(
                         imageVector = if (isPlaying) Icons.Default.Pause else Icons.Default.PlayArrow,
@@ -417,7 +406,7 @@ fun LibraryScreen(onBookSelected: (String) -> Unit, onImportRequested: () -> Uni
                 )
                 Divider(color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f))
             }
-                    item {
+            item {
                 ListItem(
                     headlineContent = { Text("Import from Device", color = BADGRBlue) },
                     leadingContent = { Icon(Icons.Default.FileUpload, contentDescription = null, tint = BADGRBlue) },
@@ -438,6 +427,10 @@ fun SettingsScreen(
     onThemeToggle: () -> Unit,
     onBack: () -> Unit
 ) {
+    val uriHandler = LocalUriHandler.current
+    val privacyUrl = "https://github.com/Ch405-L9/ReaderRSVP/blob/main/PRIVACY_POLICY.md"
+    val termsUrl = "https://github.com/Ch405-L9/ReaderRSVP/blob/main/TERMS_OF_SERVICE.md"
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -450,7 +443,11 @@ fun SettingsScreen(
             )
         }
     ) { padding ->
-        Column(modifier = Modifier.padding(padding).padding(16.dp)) {
+        Column(
+            modifier = Modifier
+                .padding(padding)
+                .padding(16.dp)
+        ) {
             Text("Appearance", style = MaterialTheme.typography.titleMedium, color = BADGRBlue)
             ListItem(
                 headlineContent = { Text("Dark Theme") },
@@ -464,24 +461,24 @@ fun SettingsScreen(
             Text("Reading Engine", style = MaterialTheme.typography.titleMedium, color = BADGRBlue)
             ListItem(
                 headlineContent = { Text("Punctuation Delay") },
-                supportingContent = { Text("Slow down for commas and periods") },
+                supportingContent = { Text("Slightly pause at commas and periods") },
                 trailingContent = {
-                    var enabled by remember { mutableStateOf(engine.punctuationDelayEnabled) }
-                    Switch(checked = enabled, onCheckedChange = { 
-                        enabled = it
-                        engine.punctuationDelayEnabled = it
-                    })
+                    Switch(
+                        checked = engine.isPunctuationDelayEnabled(),
+                        onCheckedChange = { engine.setPunctuationDelayEnabled(it) }
+                    )
                 }
             )
+            Divider(color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f))
             ListItem(
                 headlineContent = { Text("Speed Increment") },
-                supportingContent = { Text("Current: ${engine.speedIncrement} WPM") },
+                supportingContent = { Text("WPM change per click: ${engine.getWpmIncrement()}") },
                 trailingContent = {
                     Row {
-                        IconButton(onClick = { engine.speedIncrement = (engine.speedIncrement - 5).coerceAtLeast(5) }) {
+                        IconButton(onClick = { engine.setWpmIncrement((engine.getWpmIncrement() - 25).coerceAtLeast(25)) }) {
                             Icon(Icons.Default.Remove, contentDescription = null)
                         }
-                        IconButton(onClick = { engine.speedIncrement = (engine.speedIncrement + 5).coerceAtMost(100) }) {
+                        IconButton(onClick = { engine.setWpmIncrement((engine.getWpmIncrement() + 25).coerceAtMost(100)) }) {
                             Icon(Icons.Default.Add, contentDescription = null)
                         }
                     }
@@ -490,14 +487,28 @@ fun SettingsScreen(
             Divider(color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f))
             
             Spacer(modifier = Modifier.height(16.dp))
+            Text("Legal", style = MaterialTheme.typography.titleMedium, color = BADGRBlue)
+            ListItem(
+                headlineContent = { Text("Privacy Policy", color = BADGRBlue) },
+                leadingContent = { Icon(Icons.Default.PrivacyTip, contentDescription = null, tint = BADGRBlue) },
+                modifier = Modifier.clickable { uriHandler.openUri(privacyUrl) }
+            )
+            Divider(color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f))
+            ListItem(
+                headlineContent = { Text("Terms of Service", color = BADGRBlue) },
+                leadingContent = { Icon(Icons.Default.Gavel, contentDescription = null, tint = BADGRBlue) },
+                modifier = Modifier.clickable { uriHandler.openUri(termsUrl) }
+            )
+            
+            Spacer(modifier = Modifier.height(16.dp))
             Text("About", style = MaterialTheme.typography.titleMedium, color = BADGRBlue)
             ListItem(
                 headlineContent = { Text("Version") },
-                trailingContent = { Text("1.0.0") }
+                supportingContent = { Text("1.0.1") }
             )
             ListItem(
                 headlineContent = { Text("Developer") },
-                trailingContent = { Text("BADGR Technologies LLC") }
+                supportingContent = { Text("BADGR Technologies LLC") }
             )
         }
     }
