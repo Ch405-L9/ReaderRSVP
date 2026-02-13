@@ -18,18 +18,18 @@ At least 10 GB of free disk space
 Reliable internet connectivity
 User account with sudo privileges
 
-Step 1: Extract the project
+### Step 1: Extract the project
 bash
-## If you downloaded a .tar.gz archive:
+#### If you downloaded a .tar.gz archive:
 cd ~/Downloads    ## Or the directory where you saved it
 tar -xzf BADGR-RSVP-Reader-v1.0.tar.gz
 
-## If you downloaded the project folder directly:
+#### If you downloaded the project folder directly:
 cd /path/to/RSVPReader
 
 Use a workspace path you are comfortable opening directly in Android Studio (for example, ~/dev/RSVPReader).​
 
-Step 2: Run the automated setup script
+### Step 2: Run the automated setup script
 The setup script provisions Java 17, KVM acceleration, and Android tooling paths.
 bash
 cd RSVPReader
@@ -43,13 +43,13 @@ Configures the Android SDK location
 Writes a local.properties file pointing to the SDK
 Expected duration: 5–10 minutes, depending on package download speed.​
 
-Step 3: Reload your shell environment
+### Step 3: Reload your shell environment
 bash
 source ~/.bashrc
 
 This activates the environment variables configured during setup, such as JAVA_HOME, ANDROID_HOME, and any PATH updates.
 
-Step 4: Install Android Studio (if not already installed)
+### Step 4: Install Android Studio (if not already installed)
 Option 1 – Snap (recommended for most Ubuntu setups):
 bash
 sudo snap install android-studio --classic
@@ -68,7 +68,7 @@ sudo mv android-studio /opt/
 
 Initial installation usually completes within 10–15 minutes, depending on bandwidth.​​
 
-Step 5: First-time Android Studio configuration
+### Step 5: First-time Android Studio configuration
 On first launch:
 On the welcome screen, choose the Standard installation type.
 Accept all SDK and license prompts.
@@ -80,7 +80,7 @@ Platform tools
 Emulator components
 Allow 10–15 minutes for this initial provisioning.​​
 
-Step 6: Open the BADGR RSVP Reader project
+### Step 6: Open the BADGR RSVP Reader project
 From the Android Studio welcome screen, choose Open.
 Navigate to the RSVPReader project directory.
 Confirm the selection to open the project.
@@ -91,7 +91,7 @@ Sync Gradle dependencies
 Index project files
 Expect 3–5 minutes for the first project sync on a typical broadband connection.
 
-Step 7: Create an Android Virtual Device (AVD)
+### Step 7: Create an Android Virtual Device (AVD)
 Click the Device Manager icon in the Android Studio toolbar.
 Select Create Device.
 Choose a recent phone profile such as Pixel 7.
@@ -102,12 +102,12 @@ Name the device (for example, BADGR_Test_Device).
 Click Finish.
 Image download time varies; plan for roughly 5 minutes plus any additional time for system image downloads.​
 
-Step 8: Build and run the app
-Option 1 – From Android Studio (preferred for day-to-day development):
+### Step 8: Build and run the app
+#### Option 1 – From Android Studio (preferred for day-to-day development):
 Select BADGR_Test_Device (or your chosen AVD or physical device) in the device dropdown.
 Click the green Run ▶ button in the main toolbar.
 Wait for Gradle to complete the build; the emulator should start and deploy the app automatically.
-Option 2 – From the command line:
+#### Option 2 – From the command line:
 bash
 cd RSVPReader
 ./build.sh
@@ -115,7 +115,7 @@ cd RSVPReader
 First build: approximately 3–5 minutes due to dependency downloads.
 Subsequent builds: typically under 1 minute on warmed caches.
 
-Step 9: Functional smoke test
+### Step 9: Functional smoke test
 After deployment to the emulator or device, verify that the main UI elements load and respond:
 BADGR header and Speed Reader title
 Subtitle line “by BADGR Technologies LLC”
@@ -149,7 +149,7 @@ Troubleshooting reference
 Set the SDK path explicitly in local.properties:
 bash
 echo "sdk.dir=$HOME/Android/Sdk" > local.properties
-## If Android Studio was installed via snap:
+#### If Android Studio was installed via snap:
 echo "sdk.dir=$HOME/snap/android-studio/common/Android/Sdk" > local.properties
 
 This file should live at the project root alongside build.gradle.
@@ -174,7 +174,7 @@ bash
 ## Confirm KVM support is active:
 kvm-ok
 
-## If not configured:
+#### If not configured:
 sudo apt install qemu-kvm -y
 sudo adduser $USER kvm
 ## Log out and log back in to apply group membership
