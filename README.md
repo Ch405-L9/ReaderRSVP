@@ -69,4 +69,4 @@ The app uses official BADGR Technologies LLC brand colors:
 
 ---
 
-**Built with ❤️ by BADGR Technologies LLC**
+**Built with ❤️ by BADGRTechnologies LLC**
