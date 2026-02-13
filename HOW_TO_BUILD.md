@@ -1,4 +1,5 @@
-BADGR RSVP Speed Reader
+## BADGR RSVP Speed Reader
+
 Developer Build & Run Guide (Ubuntu 24.04)
 Fast path: build in 5 commands
 bash
@@ -20,11 +21,11 @@ User account with sudo privileges
 
 ### Step 1: Extract the project
 bash
-#### If you downloaded a .tar.gz archive:
+### If you downloaded a .tar.gz archive:
 cd ~/Downloads    ### Or the directory where you saved it
 tar -xzf BADGR-RSVP-Reader-v1.0.tar.gz
 
-#### If you downloaded the project folder directly:
+### If you downloaded the project folder directly:
 cd /path/to/RSVPReader
 
 Use a workspace path you are comfortable opening directly in Android Studio (for example, ~/dev/RSVPReader).​
@@ -103,11 +104,11 @@ Click Finish.
 Image download time varies; plan for roughly 5 minutes plus any additional time for system image downloads.​
 
 ### Step 8: Build and run the app
-#### Option 1 – From Android Studio (preferred for day-to-day development):
+### Option 1 – From Android Studio (preferred for day-to-day development):
 Select BADGR_Test_Device (or your chosen AVD or physical device) in the device dropdown.
 Click the green Run ▶ button in the main toolbar.
 Wait for Gradle to complete the build; the emulator should start and deploy the app automatically.
-#### Option 2 – From the command line:
+### Option 2 – From the command line:
 bash
 cd RSVPReader
 ./build.sh
@@ -149,7 +150,7 @@ Troubleshooting reference
 Set the SDK path explicitly in local.properties:
 bash
 echo "sdk.dir=$HOME/Android/Sdk" > local.properties
-#### If Android Studio was installed via snap:
+### If Android Studio was installed via snap:
 echo "sdk.dir=$HOME/snap/android-studio/common/Android/Sdk" > local.properties
 
 This file should live at the project root alongside build.gradle.
@@ -174,7 +175,7 @@ bash
 ### Confirm KVM support is active:
 kvm-ok
 
-#### If not configured:
+### If not configured:
 sudo apt install qemu-kvm -y
 sudo adduser $USER kvm
 ### Log out and log back in to apply group membership
