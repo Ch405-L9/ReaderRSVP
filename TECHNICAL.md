@@ -1,16 +1,16 @@
-# BADGR RSVP Reader – Technical Documentation
+## BADGR RSVP Reader – Technical Documentation
 **Version:** 1.0.0 (Production)
 **Maintained By:** BADGR Technologies LLC Workflow Engineering Team
 **Date:** February 12, 2026
 
 ---
 
-## 1. Architecture Overview
+#### 1. Architecture Overview
 The **ReaderRSVP** application is built on a modern reactive stack, utilizing **Jetpack Compose** for the UI layer and **Kotlin Coroutines** for high-precision timing logic. The architecture follows a strict separation of concerns via the **MVVM** pattern.
 
 
 
-### Core Components
+###### Core Components
 | Component | Responsibility |
 |:---|:---|
 | **MainActivity.kt** | Entry point; hosts the Jetpack Compose UI and manages the lifecycle of the `RSVPEngine`. |
@@ -19,7 +19,7 @@ The **ReaderRSVP** application is built on a modern reactive stack, utilizing **
 
 ---
 
-## 2. Data Flow & Execution Logic
+#### 2. Data Flow & Execution Logic
 The system utilizes a unidirectional data flow to ensure UI consistency and predictable playback performance.
 
 1.  **Ingestion**: Text is passed to `RSVPEngine.loadText()`.
@@ -35,10 +35,10 @@ The system utilizes a unidirectional data flow to ensure UI consistency and pred
 
 ---
 
-## 3. ORP (Optimal Recognition Point) Algorithm
+#### 3. ORP (Optimal Recognition Point) Algorithm
 The ORP is the specific fixation point in a word where the human eye recognizes the entire word fastest. By highlighting this point in **BADGR Red**, saccadic eye movement is eliminated, allowing for speeds up to 900 WPM.
 
-### Algorithm Logic
+###### Algorithm Logic
 ```kotlin
 fun calculateOrpIndex(word: String): Int {
     return when (word.length) {
