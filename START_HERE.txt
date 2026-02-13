@@ -1,3 +1,4 @@
+```text
 ╔══════════════════════════════════════════════════════════════════════╗
 ║                                                                      ║
 ║             ██████╗  █████╗ ██████╗  ██████╗ ██████╗                ║
@@ -12,11 +13,11 @@
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 
- WELCOME TO YOUR COMPLETE ANDROID RSVP SPEED READING APP!
+WELCOME TO YOUR COMPLETE ANDROID RSVP SPEED READING APP!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- WHAT YOU HAVE
+WHAT YOU HAVE
 
 > Complete Android Studio Project (Kotlin + Jetpack Compose)
 > Production-ready code (~500 lines)
@@ -48,6 +49,7 @@ QUICK START (Choose Your Path)
 │  4. Build and run                                                   │
 └─────────────────────────────────────────────────────────────────────┘
 
+
 ┌─────────────────────────────────────────────────────────────────────┐
 │  PATH 3: COMMAND LINE (For experts)                                 │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -58,7 +60,7 @@ QUICK START (Choose Your Path)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- DOCUMENTATION GUIDE
+DOCUMENTATION GUIDE
 
 ┌───────────────────┬─────────────────────────────────────────────────┐
 │ FILE              │ PURPOSE                                         │
@@ -70,15 +72,15 @@ QUICK START (Choose Your Path)
 │ TECHNICAL.md      │ Architecture & implementation details          │
 └───────────────────┴─────────────────────────────────────────────────┘
 
- RECOMMENDED READING ORDER:
-   1. START_HERE.txt (you are here ✓)
-   2. PROJECT_SUMMARY.md (big picture)
-   3. QUICKSTART.md OR README.md (setup)
-   4. TECHNICAL.md (optional - deep dive)
+RECOMMENDED READING ORDER:
+  1. START_HERE.txt (you are here ✓)
+  2. PROJECT_SUMMARY.md (big picture)
+  3. QUICKSTART.md OR README.md (setup)
+  4. TECHNICAL.md (optional - deep dive)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- EXECUTABLE SCRIPTS
+EXECUTABLE SCRIPTS
 
 ┌───────────────┬──────────────────────────────────────────────────┐
 │ SCRIPT        │ WHAT IT DOES                                     │
@@ -88,27 +90,28 @@ QUICK START (Choose Your Path)
 │ gradlew       │ Official Gradle wrapper (build tool)             │
 └───────────────┴──────────────────────────────────────────────────┘
 
- TIP: All .sh files are already executable (chmod +x applied)
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- YOUR SYSTEM COMPATIBILITY
-
- Hardware: CyberPowerPC Gaming PC
-   • AMD Ryzen 5 5500 (12 cores) ✓
-   • 16GB RAM ✓
-   • AMD Radeon RX 6500 XT ✓
-   • 1TB storage ✓
-
- Software: Ubuntu 24.04.3 LTS
-   • Linux kernel 6.14.0-37 ✓
-   • GNOME 46 ✓
-   • Wayland ✓
-
- VERDICT: FULLY COMPATIBLE - Excellent performance expected!
+TIP: All .sh files are already executable (chmod +x applied)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- APPLICATION FEATURES
+YOUR SYSTEM COMPATIBILITY
+
+Hardware: CyberPowerPC Gaming PC
+  • AMD Ryzen 5 5500 (12 cores) ✓
+  • 16GB RAM ✓
+  • AMD Radeon RX 6500 XT ✓
+  • 1TB storage ✓
+
+Software: Ubuntu 24.04.3 LTS
+  • Linux kernel 6.14.0-37 ✓
+  • GNOME 46 ✓
+  • Wayland ✓
+
+VERDICT: FULLY COMPATIBLE - Excellent performance expected!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+APPLICATION FEATURES
 
 ┌──────────────────────────────────────────────────────────────────┐
 │   Core Features                                                │
@@ -133,7 +136,7 @@ QUICK START (Choose Your Path)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- PROJECT STRUCTURE
+PROJECT STRUCTURE
 
 RSVPReader/
 ├── 📄 START_HERE.txt ............. This orientation guide
@@ -168,7 +171,7 @@ RSVPReader/
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- NEXT STEPS
+NEXT STEPS
 
 [ ] Step 1: Read PROJECT_SUMMARY.md (5 min)
 [ ] Step 2: Run ./setup.sh (10 min)
@@ -181,7 +184,7 @@ TOTAL TIME: ~30 minutes to first run
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- QUICK FAQ
+QUICK FAQ
 
 Q: I'm new to Android development. Where do I start?
 A: Perfect! Read QUICKSTART.md → run setup.sh → open in Android Studio
@@ -203,7 +206,7 @@ A: Check README.md → Troubleshooting section (covers all common issues)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- WHAT MAKES THIS SPECIAL
+WHAT MAKES THIS SPECIAL
 
 ✓ Modern Architecture    (MVVM, StateFlow, Coroutines)
 ✓ Best Practices        (Kotlin idioms, null-safety)
@@ -214,7 +217,7 @@ A: Check README.md → Troubleshooting section (covers all common issues)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- LEARNING RESOURCES (Built-in)
+LEARNING RESOURCES (Built-in)
 
 The documentation teaches you:
 • Android app structure
@@ -229,7 +232,7 @@ You'll understand every line of code by the end!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- PRO TIPS
+PRO TIPS
 
 1. Start with QUICKSTART.md if you want to run it ASAP
 2. Read README.md if you want to understand everything
@@ -240,7 +243,7 @@ You'll understand every line of code by the end!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- IMPORTANT REMINDERS
+IMPORTANT REMINDERS
 
 >  Run 'source ~/.bashrc' after setup.sh
 >  First build takes 3-5 minutes (Gradle downloads dependencies)
@@ -250,7 +253,7 @@ You'll understand every line of code by the end!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- SUCCESS CHECKLIST
+SUCCESS CHECKLIST
 
 You'll know everything is working when:
 [ ] setup.sh completes without errors
@@ -267,7 +270,7 @@ You'll know everything is working when:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- READY TO BEGIN?
+READY TO BEGIN?
 
 → Open PROJECT_SUMMARY.md for the complete overview
 → OR jump straight to QUICKSTART.md to start building!
@@ -282,3 +285,4 @@ You'll know everything is working when:
 ║                      All rights reserved                             ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
+```
