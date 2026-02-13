@@ -1,6 +1,6 @@
-# BADGR RSVP Speed Reader - Quick Start Guide
+## BADGR RSVP Speed Reader - Quick Start Guide
 
-## 🚀 Get Running in 5 Minutes
+## Get Running in 5 Minutes
 
 ### For Ubuntu 24.04 (Your System)
 
@@ -29,13 +29,8 @@ android-studio
 
 # 8. Run the app
 # Click green "Run" button → Select your device → Wait for build
-```
-
----
-
-## ⚡ Alternative: Command Line Build
-
-```bash
+Alternative: Command Line Build
+bash
 # After Android Studio setup, build from terminal:
 cd /path/to/RSVPReader
 
@@ -47,13 +42,8 @@ cd /path/to/RSVPReader
 
 # APK location:
 # app/build/outputs/apk/debug/app-debug.apk
-```
-
----
-
-## 📱 Running on Your Phone
-
-```bash
+Running on Your Phone
+bash
 # 1. Enable USB Debugging on phone
 #    Settings → About → Tap Build Number 7 times
 #    Settings → Developer Options → USB Debugging ON
@@ -65,66 +55,52 @@ adb devices
 
 # 4. Install app
 ./gradlew installDebug
-```
-
----
-
-## ⏱️ Time Estimates
-
-| Task | Duration |
-|------|----------|
-| Java installation | 2 min |
-| Android Studio download | 5-10 min |
-| Android Studio setup | 5 min |
-| Project import & sync | 3 min |
-| First build | 3-5 min |
-| **Total** | **~20 min** |
-
----
-
-## 🎯 System Check
-
+Time Estimates
+Task	Duration
+Java installation	2 min
+Android Studio download	5-10 min
+Android Studio setup	5 min
+Project import & sync	3 min
+First build	3-5 min
+Total	~20 min
+System Check
 Your Hardware (CONFIRMED COMPATIBLE):
-- ✅ AMD Ryzen 5 5500 (12 cores)
-- ✅ 16GB RAM (8GB+ required)
-- ✅ AMD Radeon RX 6500 XT
-- ✅ 1TB storage (10GB+ required)
-- ✅ Ubuntu 24.04.3 LTS
 
----
+AMD Ryzen 5 5500 (12 cores)
 
-## 🛑 Common Issues
+16GB RAM (8GB+ required)
 
-### Build fails with "SDK not found"
-```bash
+AMD Radeon RX 6500 XT
+
+1TB storage (10GB+ required)
+
+Ubuntu 24.04.3 LTS
+
+Common Issues
+Build fails with "SDK not found"
+bash
 # Create local.properties manually
 echo "sdk.dir=$HOME/Android/Sdk" > local.properties
-```
-
-### Emulator is slow
-```bash
+Emulator is slow
+bash
 # Enable KVM acceleration (already in setup.sh)
 sudo apt install qemu-kvm -y
 sudo adduser $USER kvm
 # Logout and login
-```
-
-### Gradle sync fails
-```bash
+Gradle sync fails
+bash
 # In Android Studio:
 # File → Invalidate Caches → Invalidate and Restart
-```
+Need Help?
+Check README.md for detailed instructions
 
----
+See Troubleshooting section
 
-## 📞 Need Help?
+Verify all prerequisites are met
 
-1. Check README.md for detailed instructions
-2. See Troubleshooting section
-3. Verify all prerequisites are met
-
----
-
-**Ready to build? Run `./setup.sh` now!**
+Ready to build? Run ./setup.sh now!
 
 © 2026 BADGR Technologies LLC
+
+text
+undefined
