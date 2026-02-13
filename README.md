@@ -1,4 +1,4 @@
-# BADGR Bolt
+## BADGR Bolt
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green)
 ![Android](https://img.shields.io/badge/platform-Android-brightgreen)
@@ -11,7 +11,7 @@ A high-performance Android speed reading application using Rapid Serial Visual P
 
 ---
 
-## Features
+### Features
 
 - **RSVP Display**: One word at a time for maximum reading efficiency.
 - **ORP Highlighting**: Red letter marking for optimal eye fixation.
@@ -27,7 +27,7 @@ A high-performance Android speed reading application using Rapid Serial Visual P
 
 ---
 
-## Quick Start
+### Quick Start
 
 1. **Clone** the repository:
    ```bash
@@ -39,7 +39,7 @@ A high-performance Android speed reading application using Rapid Serial Visual P
 
 ---
 
-## Technical Details
+### Technical Details
 
 - **Language**: Kotlin
 - **UI Framework**: Jetpack Compose
@@ -51,17 +51,17 @@ A high-performance Android speed reading application using Rapid Serial Visual P
 
 ---
 
-## BADGR Branding
+### BADGR Branding
 
 The app uses official BADGRTechnologies LLC brand colors:
-- **Primary Blue**: #0000FF
-- **ORP Highlight**: #FF0000
-- **Background**: #000000
-- **Text**: #FFFFFF
+- **Primary Blue**: ##0000FF
+- **ORP Highlight**: ##FF0000
+- **Background**: ##000000
+- **Text**: ##FFFFFF
 
 ---
 
-## Legal
+### Legal
 
 - [Privacy Policy](PRIVACY_POLICY.md)
 - [Terms of Service](TERMS_OF_SERVICE.md)
