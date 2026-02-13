@@ -429,7 +429,7 @@ You'll know everything is working when:
 
 ---
 
-#### 📞 GETTING HELP
+#### GETTING HELP
 
 If you encounter issues:
 
@@ -459,7 +459,7 @@ If you've made it this far, you now have:
 
 ---
 
-#### 📋 QUICK COMMAND REFERENCE
+#### QUICK COMMAND REFERENCE
 
 ```bash
 ## Complete build workflow
