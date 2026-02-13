@@ -211,8 +211,8 @@ bash
 adb devices
 
 ### Expected:
-### List of devices attached
-### ABC123456789    device
+ - List of devices attached
+ - ABC123456789    device
 
 ### Install the debug build:
 ./gradlew installDebug
