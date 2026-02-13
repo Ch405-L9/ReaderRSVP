@@ -11,7 +11,7 @@ A high-performance Android speed reading application using Rapid Serial Visual P
 
 ---
 
-## 🎯 Features
+## Features
 
 - **RSVP Display**: One word at a time for maximum reading efficiency.
 - **ORP Highlighting**: Red letter marking for optimal eye fixation.
@@ -27,7 +27,7 @@ A high-performance Android speed reading application using Rapid Serial Visual P
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 1. **Clone** the repository:
    ```bash
@@ -39,7 +39,7 @@ A high-performance Android speed reading application using Rapid Serial Visual P
 
 ---
 
-## 🔧 Technical Details
+## Technical Details
 
 - **Language**: Kotlin
 - **UI Framework**: Jetpack Compose
@@ -51,7 +51,7 @@ A high-performance Android speed reading application using Rapid Serial Visual P
 
 ---
 
-## 🎨 BADGR Branding
+## BADGR Branding
 
 The app uses official BADGR Technologies LLC brand colors:
 - **Primary Blue**: #0000FF
@@ -61,7 +61,7 @@ The app uses official BADGR Technologies LLC brand colors:
 
 ---
 
-## 📄 Legal
+## Legal
 
 - [Privacy Policy](PRIVACY_POLICY.md)
 - [Terms of Service](TERMS_OF_SERVICE.md)
