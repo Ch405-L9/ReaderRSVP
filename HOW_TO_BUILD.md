@@ -21,7 +21,7 @@ User account with sudo privileges
 ### Step 1: Extract the project
 bash
 #### If you downloaded a .tar.gz archive:
-cd ~/Downloads    ## Or the directory where you saved it
+cd ~/Downloads    ### Or the directory where you saved it
 tar -xzf BADGR-RSVP-Reader-v1.0.tar.gz
 
 #### If you downloaded the project folder directly:
@@ -160,10 +160,10 @@ Use File → Invalidate Caches → Invalidate and Restart to clear indexes and t
 
 Incorrect Java version
 bash
-## Check the current Java version:
+### Check the current Java version:
 java -version    ## Target: 17.x.x
 
-## Install Java 17 if needed:
+### Install Java 17 if needed:
 sudo apt install openjdk-17-jdk -y
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
@@ -171,19 +171,19 @@ Ensure the shell using Gradle and Android Studio sees Java 17 as the default JDK
 
 Slow emulator performance
 bash
-## Confirm KVM support is active:
+### Confirm KVM support is active:
 kvm-ok
 
 #### If not configured:
 sudo apt install qemu-kvm -y
 sudo adduser $USER kvm
-## Log out and log back in to apply group membership
+### Log out and log back in to apply group membership
 
 Hardware acceleration significantly improves emulator responsiveness on supported CPUs.​​
 
 “Unable to locate adb”
 bash
-## Add platform-tools to PATH:
+### Add platform-tools to PATH:
 export PATH=$PATH:$HOME/Android/Sdk/platform-tools
 echo 'export PATH=$PATH:$HOME/Android/Sdk/platform-tools' >> ~/.bashrc
 source ~/.bashrc
@@ -206,14 +206,14 @@ Enable USB debugging.
 Connect the phone to your Ubuntu machine via USB.​
 Deploy to the device
 bash
-## Verify that the device is visible:
+### Verify that the device is visible:
 adb devices
 
-## Expected:
-## List of devices attached
-## ABC123456789    device
+### Expected:
+### List of devices attached
+### ABC123456789    device
 
-## Install the debug build:
+### Install the debug build:
 ./gradlew installDebug
 
 Alternatively, you can select the physical device from the Android Studio device dropdown and click Run.
@@ -304,7 +304,7 @@ End-to-end
 
 Subsequent builds typically complete in under one minute on the same machine.​
 
-Success criteria
+### Success criteria
 You are in a good state to iterate and ship when:
 Gradle builds complete without errors in Android Studio and on the command line.
 Emulator and physical-device deployments succeed consistently.
@@ -312,7 +312,7 @@ The BADGR-branded icon and splash experience are visible.
 Single-word display and ORP highlighting behave smoothly across WPM ranges.
 All controls (play, pause, jump, reset, slider) respond without noticeable lag.
 
-Further learning
+### Further learning
 Android Developer Guide: core platform and app architecture references.​
 Jetpack Compose tutorial: modern UI patterns and best practices.​
 Kotlin documentation: language features and idioms.​
@@ -323,23 +323,23 @@ RSVPEngine.kt for the core RSVP logic and extension points.
 
 Quick command reference
 bash
-## Full setup path
+### Full setup path
 cd RSVPReader
 ./setup.sh
 source ~/.bashrc
 android-studio .
 
-## Command-line build path
+### Command-line build path
 ./gradlew clean build
 ./gradlew installDebug
 
-## Device visibility
+### Device visibility
 adb devices
 
-## Filtered log output
+### Filtered log output
 adb logcat | grep BADGR
 
-## Uninstall from a device
+### Uninstall from a device
 adb uninstall com.badgr.rsvpreader
 
 This guide is designed to get a developer from a clean Ubuntu 24.04 workstation to a running BADGR RSVP Speed Reader build in about an hour, with clear upgrade paths toward a signed release-ready artifact
