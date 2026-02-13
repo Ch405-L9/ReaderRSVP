@@ -1,485 +1,345 @@
-# 🔨 HOW TO BUILD BADGR RSVP SPEED READER
-
-## Complete Step-by-Step Build Guide for Ubuntu 24.04
-
----
-
-## ⚡ FASTEST METHOD (5 Commands)
-
-```bash
+BADGR RSVP Speed Reader
+Developer Build & Run Guide (Ubuntu 24.04)
+Fast path: build in 5 commands
+bash
 cd /path/to/RSVPReader
 ./setup.sh
 source ~/.bashrc
 android-studio .
-# Wait for project to load, then click the green "Run" ▶ button
-```
+# After the project loads, click the green Run ▶ button
 
-**Done!** The app will build and launch in the emulator.
+The app builds and launches in the Android emulator when the Gradle sync and initial build complete.
 
----
+Detailed build workflow
+Prerequisites
+Confirm the following before you start:
+Ubuntu 24.04.3 LTS
+At least 10 GB of free disk space
+Reliable internet connectivity
+User account with sudo privileges
 
-## 📋 DETAILED STEP-BY-STEP GUIDE
-
-### Prerequisites Check
-
-Before starting, verify you have:
-- ✅ Ubuntu 24.04.3 LTS (you have this)
-- ✅ 10GB free disk space (you have plenty)
-- ✅ Internet connection (for downloads)
-- ✅ Root/sudo access (for installations)
-
----
-
-### STEP 1: Extract the Project (if using archive)
-
-```bash
-# If you downloaded the .tar.gz file:
-cd ~/Downloads  # or wherever you saved it
+Step 1: Extract the project
+bash
+# If you downloaded a .tar.gz archive:
+cd ~/Downloads    # Or the directory where you saved it
 tar -xzf BADGR-RSVP-Reader-v1.0.tar.gz
 
-# If you downloaded the RSVPReader folder directly:
-# Just navigate to it
+# If you downloaded the project folder directly:
 cd /path/to/RSVPReader
-```
 
----
+Use a workspace path you are comfortable opening directly in Android Studio (for example, ~/dev/RSVPReader).​
 
-### STEP 2: Run Automated Setup
-
-This script installs Java 17, KVM acceleration, and configures your environment.
-
-```bash
+Step 2: Run the automated setup script
+The setup script provisions Java 17, KVM acceleration, and Android tooling paths.
+bash
 cd RSVPReader
 ./setup.sh
-```
 
-**What this does:**
-- ✅ Installs OpenJDK 17
-- ✅ Sets JAVA_HOME environment variable
-- ✅ Installs KVM for fast emulation (AMD Ryzen optimization)
-- ✅ Configures Android SDK path
-- ✅ Creates local.properties file
+This step typically performs the following:
+Installs OpenJDK 17
+Sets the JAVA_HOME environment variable
+Installs and configures KVM for hardware-accelerated emulation (optimized for AMD Ryzen and similar)
+Configures the Android SDK location
+Writes a local.properties file pointing to the SDK
+Expected duration: 5–10 minutes, depending on package download speed.​
 
-**Duration:** 5-10 minutes
-
----
-
-### STEP 3: Reload Your Shell Environment
-
-```bash
+Step 3: Reload your shell environment
+bash
 source ~/.bashrc
-```
 
-This activates the environment variables that were just added.
+This activates the environment variables configured during setup, such as JAVA_HOME, ANDROID_HOME, and any PATH updates.
 
----
-
-### STEP 4: Install Android Studio (if not installed)
-
-**Method 1 - Using Snap (Recommended):**
-```bash
+Step 4: Install Android Studio (if not already installed)
+Option 1 – Snap (recommended for most Ubuntu setups):
+bash
 sudo snap install android-studio --classic
-```
 
-**Method 2 - Manual Download:**
-1. Visit https://developer.android.com/studio
-2. Download Android Studio for Linux
-3. Extract and run:
-```bash
+The --classic flag is required for Android Studio to access the SDK and related tools.​​
+Option 2 – Manual download:
+Open https://developer.android.com/studio in a browser.​
+Download the Linux .tar.gz package.
+Extract and install:
+bash
 cd ~/Downloads
 tar -xzf android-studio-*.tar.gz
 sudo mv android-studio /opt/
 /opt/android-studio/bin/studio.sh
-```
 
-**Duration:** 10-15 minutes (download time depends on internet speed)
 
----
+Initial installation usually completes within 10–15 minutes, depending on bandwidth.​​
 
-### STEP 5: First Launch of Android Studio
+Step 5: First-time Android Studio configuration
+On first launch:
+On the welcome screen, choose the Standard installation type.
+Accept all SDK and license prompts.
+Proceed through the wizard and click Finish.
+Android Studio then downloads:
+Android SDK
+Build tools
+Platform tools
+Emulator components
+Allow 10–15 minutes for this initial provisioning.​​
 
-When Android Studio opens for the first time:
+Step 6: Open the BADGR RSVP Reader project
+From the Android Studio welcome screen, choose Open.
+Navigate to the RSVPReader project directory.
+Confirm the selection to open the project.
+Android Studio will then:
+Load the Gradle project
+Download the Gradle wrapper (if necessary)
+Sync Gradle dependencies
+Index project files
+Expect 3–5 minutes for the first project sync on a typical broadband connection.
 
-1. **Welcome Screen** appears
-2. Choose **"Standard" installation**
-3. Click **"Next"** through the setup wizard
-4. **Accept all licenses** (scroll through and click "Accept")
-5. Click **"Finish"**
+Step 7: Create an Android Virtual Device (AVD)
+Click the Device Manager icon in the Android Studio toolbar.
+Select Create Device.
+Choose a recent phone profile such as Pixel 7.
+Click Next.
+Select a recent system image, for example Android 14 (API 34, UpsideDownCake), and download it if needed.
+Click Next.
+Name the device (for example, BADGR_Test_Device).
+Click Finish.
+Image download time varies; plan for roughly 5 minutes plus any additional time for system image downloads.​
 
-Android Studio will now download:
-- Android SDK
-- Build tools
-- Emulator
-- Platform tools
-
-**Duration:** 10-15 minutes (automatic download)
-
----
-
-### STEP 6: Open the BADGR RSVP Reader Project
-
-1. On the Android Studio welcome screen, click **"Open"**
-2. Navigate to the `RSVPReader` folder
-3. Click **"OK"**
-
-Android Studio will:
-- Load the project
-- Download Gradle wrapper (if needed)
-- Sync Gradle dependencies
-- Index project files
-
-**Duration:** 3-5 minutes
-
----
-
-### STEP 7: Create an Android Virtual Device (AVD)
-
-1. Click the **"Device Manager"** icon in the toolbar (phone icon)
-2. Click **"Create Device"**
-3. Select **"Pixel 7"** (recommended)
-4. Click **"Next"**
-5. Under system images, select **"UpsideDownCake" (API 34, Android 14)**
-6. If not downloaded, click **"Download"** next to it
-7. Click **"Next"**
-8. Name it **"BADGR_Test_Device"**
-9. Click **"Finish"**
-
-**Duration:** 5 minutes (plus download time if needed)
-
----
-
-### STEP 8: Build and Run the App
-
-**Method 1 - Using Android Studio GUI (Easiest):**
-1. Click the green **"Run" ▶** button in the toolbar
-2. Select **"BADGR_Test_Device"** from the dropdown
-3. Wait for the build to complete
-
-**Method 2 - Using Command Line:**
-```bash
+Step 8: Build and run the app
+Option 1 – From Android Studio (preferred for day-to-day development):
+Select BADGR_Test_Device (or your chosen AVD or physical device) in the device dropdown.
+Click the green Run ▶ button in the main toolbar.
+Wait for Gradle to complete the build; the emulator should start and deploy the app automatically.
+Option 2 – From the command line:
+bash
 cd RSVPReader
 ./build.sh
-```
 
-**First build takes:** 3-5 minutes (downloads dependencies)  
-**Subsequent builds:** Under 1 minute
+First build: approximately 3–5 minutes due to dependency downloads.
+Subsequent builds: typically under 1 minute on warmed caches.
 
----
+Step 9: Functional smoke test
+After deployment to the emulator or device, verify that the main UI elements load and respond:
+BADGR header and Speed Reader title
+Subtitle line “by BADGR Technologies LLC”
+Central word display region
+Progress bar
+WPM slider (default 300 WPM)
+Play/Pause control
+Jump backward/forward controls
+Reset control
+Recommended quick test:
+Press Play and confirm that words advance one at a time.
+Confirm the red “Optimal Recognition Point” letter for each word.
+Adjust the WPM slider and verify that reading speed changes in real time.
+Use jump controls to seek within the text.
+Use Reset to return to the beginning and verify progress bar and counters update accordingly.​
 
-### STEP 9: Test the App
+Verification checklist
+Use this checklist to validate a clean end-to-end setup:
+ App launches without runtime crashes on emulator or device
+ Branding and visual layout are displayed as expected
+ Single-word display behavior is correct
+ Red ORP highlight is visible and stable
+ Play/Pause controls start and stop reading reliably
+ WPM slider updates reading speed without lag
+ Jump controls move within the text as expected
+ Reset control returns to the start of the text
+ Progress bar and word counters track position accurately
 
-Once the app launches, you should see:
-
-✅ BADGR logo at the top (blue)  
-✅ "Speed Reader" title  
-✅ "by BADGR Technologies LLC" subtitle  
-✅ Large centered word display area  
-✅ Progress bar  
-✅ WPM slider (default: 300 WPM)  
-✅ Play/Pause button (large blue circle)  
-✅ Jump back/forward buttons  
-✅ Reset button  
-
-**Test the controls:**
-1. Press **Play** - words should appear one at a time
-2. Notice the **red letter** in each word (ORP)
-3. Adjust the **WPM slider** - speed changes
-4. Press **Jump Forward** - skips 10 words
-5. Press **Reset** - returns to beginning
-
----
-
-## 🎯 VERIFICATION CHECKLIST
-
-After building, verify everything works:
-
-- [ ] App launches without crashes
-- [ ] BADGR branding visible
-- [ ] Words display one at a time
-- [ ] Red ORP letter highlighted
-- [ ] Play button starts reading
-- [ ] Pause button stops reading
-- [ ] WPM slider changes speed
-- [ ] Jump buttons work
-- [ ] Reset button works
-- [ ] Progress bar updates
-- [ ] Word counter updates
-
----
-
-## 🔧 TROUBLESHOOTING
-
-### Issue: "SDK not found"
-
-**Solution:**
-```bash
+Troubleshooting reference
+“SDK not found”
+Set the SDK path explicitly in local.properties:
+bash
 echo "sdk.dir=$HOME/Android/Sdk" > local.properties
-# OR if installed via snap:
+# If Android Studio was installed via snap:
 echo "sdk.dir=$HOME/snap/android-studio/common/Android/Sdk" > local.properties
-```
 
-### Issue: "Gradle sync failed"
+This file should live at the project root alongside build.gradle.
 
-**Solution:**
-```bash
-# In Android Studio menu:
-# File → Invalidate Caches → Invalidate and Restart
-```
+“Gradle sync failed”
+In Android Studio:
+Use File → Invalidate Caches → Invalidate and Restart to clear indexes and trigger a clean sync.
 
-### Issue: "Java version incorrect"
+Incorrect Java version
+bash
+# Check the current Java version:
+java -version    # Target: 17.x.x
 
-**Solution:**
-```bash
-# Verify Java version
-java -version  # Should show "17.x.x"
-
-# If not, install Java 17
+# Install Java 17 if needed:
 sudo apt install openjdk-17-jdk -y
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-```
 
-### Issue: Emulator is slow
+Ensure the shell using Gradle and Android Studio sees Java 17 as the default JDK.
 
-**Solution:**
-```bash
-# Verify KVM is installed
+Slow emulator performance
+bash
+# Confirm KVM support is active:
 kvm-ok
 
-# If not:
+# If not configured:
 sudo apt install qemu-kvm -y
 sudo adduser $USER kvm
-# Logout and login for group changes to take effect
-```
+# Log out and log back in to apply group membership
 
-### Issue: "Unable to locate adb"
+Hardware acceleration significantly improves emulator responsiveness on supported CPUs.​​
 
-**Solution:**
-```bash
-# Add to PATH
+“Unable to locate adb”
+bash
+# Add platform-tools to PATH:
 export PATH=$PATH:$HOME/Android/Sdk/platform-tools
 echo 'export PATH=$PATH:$HOME/Android/Sdk/platform-tools' >> ~/.bashrc
 source ~/.bashrc
-```
 
-### Issue: Build fails with dependency errors
+Confirm with adb version and adb devices once the emulator or device is attached.
 
-**Solution:**
-```bash
-# Clean and rebuild
+Dependency-related build failures
+bash
 ./gradlew clean
 ./gradlew build
-```
 
----
+A clean rebuild often resolves transient Gradle and cache issues.
 
-## 📱 BUILDING FOR PHYSICAL DEVICE
-
-### Enable Developer Mode on Your Phone
-
-1. Go to **Settings** → **About Phone**
-2. Tap **"Build Number"** 7 times rapidly
-3. Go back to **Settings** → **System** → **Developer Options**
-4. Enable **"USB Debugging"**
-5. Connect phone to computer via USB
-
-### Build and Install
-
-```bash
-# Verify device is connected
+Running on a physical Android device
+Enable developer mode and USB debugging
+On the device, open Settings → About phone.
+Tap Build number seven times to enable Developer Options.
+Navigate to Settings → System → Developer options.
+Enable USB debugging.
+Connect the phone to your Ubuntu machine via USB.​
+Deploy to the device
+bash
+# Verify that the device is visible:
 adb devices
-# Should show: List of devices attached
-#              ABC123456789    device
 
-# Install the app
+# Expected:
+# List of devices attached
+# ABC123456789    device
+
+# Install the debug build:
 ./gradlew installDebug
 
-# Or use Android Studio:
-# Select your device from the device dropdown
-# Click Run
-```
+Alternatively, you can select the physical device from the Android Studio device dropdown and click Run.
 
----
-
-## 🎨 CUSTOMIZING THE APP
-
-### Change Colors
-
-Edit `app/src/main/java/com/badgr/rsvpreader/ui/theme/Theme.kt`:
-
-```kotlin
-// Change these values:
+Customization hooks
+Brand colors
+Edit app/src/main/java/com/badgr/rsvpreader/ui/theme/Theme.kt:
+kotlin
+// Example palette:
 val BADGRBlue = Color(0xFF0000FF)      // Primary color
 val BADGRRed = Color(0xFFFF0000)       // ORP highlight
 val BADGRBlack = Color(0xFF000000)     // Background
 val BADGRWhite = Color(0xFFFFFFFF)     // Text
-```
 
-### Change Sample Text
+Using a centralized palette in the theme file keeps brand updates consistent across the UI.​
 
-Edit `app/src/main/res/values/strings.xml`:
-
-```xml
+Sample text
+Edit app/src/main/res/values/strings.xml:
+xml
 <string name="sample_text">Your new text here...</string>
-```
 
-### Change WPM Range
+This makes it easy to adapt demo content for different audiences or demo scenarios without touching core logic.​
 
-Edit `app/src/main/java/com/badgr/rsvpreader/MainActivity.kt`:
+WPM range
+Edit app/src/main/java/com/badgr/rsvpreader/MainActivity.kt:
+kotlin
+// Example:
+valueRange = 200f..900f,  // Adjust to preferred min/max WPM
+steps = 27,               // Align steps with the new range
 
-```kotlin
-// Find this line and modify the range:
-valueRange = 200f..900f,  // Change to your desired range
-steps = 27,  // Adjust steps accordingly
-```
+Align the range and step count with your expected reader proficiency levels.
 
----
-
-## 📦 BUILDING RELEASE APK
-
-For a production-ready APK (smaller size, optimized):
-
-```bash
-# Build release APK
+Building a release APK
+To generate an optimized release APK:
+bash
 ./gradlew assembleRelease
 
-# APK will be at:
-# app/build/outputs/apk/release/app-release-unsigned.apk
-```
+The release artifact is created under:
+text
+app/build/outputs/apk/release/app-release-unsigned.apk
 
-**Note:** For Play Store, you'll need to sign the APK with a keystore.
+For Play Store distribution, configure signing with a secure keystore and integrate signing configs into your Gradle build as recommended in Android’s release guidelines.
 
----
+Recommended next steps
+Today
+Build and run the project end to end.
+Exercise all primary controls (play, pause, jump, reset, WPM slider).
+Confirm behavior on the default AVD profile.
+This week
+Align color palette and typography with your brand system.
+Replace sample text with domain-relevant content.
+Validate behavior on at least one physical device.
+Share a test build with internal stakeholders for feedback.
+Future versions
+Add text import (TXT, EPUB, PDF) to support real-world reading flows.
+Implement reading history and statistics to surface engagement metrics.
+Add themes and user profiles for multi-tenant scenarios.
+Evaluate cloud sync for cross-device continuation and analytics.​
 
-## 🚀 NEXT STEPS
+Build timeline overview
+Activity
+Approximate time
+Notes
+Extract project
+10 seconds
+Archive only
+Run setup.sh
+10 minutes
+Package installs
+Install Android Studio
+15 minutes
+One-time
+Initial Studio wizard
+15 minutes
+SDK download
+Open and sync project
+5 minutes
+First sync
+Create AVD
+5 minutes
+Plus image download
+First debug build
+5 minutes
+Warm caches
+Total initial setup
+≈ 60 minutes
+End-to-end
 
-### Immediate (Today)
-1. ✅ Build and run the app
-2. ✅ Test all features
-3. ✅ Adjust WPM to your preference
-4. ✅ Try reading sample text
+Subsequent builds typically complete in under one minute on the same machine.​
 
-### Short-term (This Week)
-1. Customize colors to your exact brand
-2. Add your own sample text
-3. Test on a physical device
-4. Share with team members
+Success criteria
+You are in a good state to iterate and ship when:
+Gradle builds complete without errors in Android Studio and on the command line.
+Emulator and physical-device deployments succeed consistently.
+The BADGR-branded icon and splash experience are visible.
+Single-word display and ORP highlighting behave smoothly across WPM ranges.
+All controls (play, pause, jump, reset, slider) respond without noticeable lag.
 
-### Long-term (Future Versions)
-1. Add file import (TXT, EPUB, PDF)
-2. Implement reading statistics
-3. Add multiple theme support
-4. Create user profiles
-5. Add cloud sync
+Further learning
+Android Developer Guide: core platform and app architecture references.​
+Jetpack Compose tutorial: modern UI patterns and best practices.​
+Kotlin documentation: language features and idioms.​
+For project internals, refer to:
+TECHNICAL.md for architecture and design decisions.
+README.md for feature overview and setup notes.
+RSVPEngine.kt for the core RSVP logic and extension points.
 
----
-
-## 📊 BUILD SUMMARY
-
-| Task | Time | Status |
-|------|------|--------|
-| Extract project | 10 sec | ⏱️ |
-| Run setup.sh | 10 min | ⏱️ |
-| Install Android Studio | 15 min | ⏱️ |
-| Setup wizard | 15 min | ⏱️ |
-| Open project | 5 min | ⏱️ |
-| Create AVD | 5 min | ⏱️ |
-| First build | 5 min | ⏱️ |
-| **TOTAL** | **~60 min** | 🎯 |
-
-*Subsequent builds: <1 minute*
-
----
-
-## ✅ SUCCESS INDICATORS
-
-You'll know everything is working when:
-
-1. ✅ No build errors in Android Studio
-2. ✅ Emulator launches successfully
-3. ✅ App icon appears (blue with white "B")
-4. ✅ BADGR branding visible in app
-5. ✅ Words display smoothly
-6. ✅ Red ORP letter clearly visible
-7. ✅ All controls responsive
-8. ✅ No lag at any WPM speed
-
----
-
-## 🎓 LEARNING RESOURCES
-
-### Official Documentation
-- [Android Developer Guide](https://developer.android.com/guide)
-- [Jetpack Compose Tutorial](https://developer.android.com/jetpack/compose/tutorial)
-- [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
-
-### Project-Specific Docs
-- **TECHNICAL.md** - Architecture deep dive
-- **README.md** - Complete feature documentation
-- **RSVPEngine.kt** - Well-commented core logic
-
----
-
-## 💡 PRO TIPS
-
-1. **Use keyboard shortcuts** in Android Studio (Ctrl+Shift+A for actions)
-2. **Enable auto-import** (Settings → Editor → Auto Import)
-3. **Use Logcat** for debugging (View → Tool Windows → Logcat)
-4. **Hot reload** works in emulator (changes show without rebuild)
-5. **Create multiple AVDs** for testing different screen sizes
-
----
-
-## 📞 GETTING HELP
-
-If you encounter issues:
-
-1. **Check this guide** - Troubleshooting section above
-2. **Read README.md** - Comprehensive troubleshooting
-3. **Check TECHNICAL.md** - Architecture details
-4. **Verify prerequisites** - Java 17, Android Studio, SDK
-5. **Check Android Studio Logcat** - Error messages
-
----
-
-## 🎉 CONGRATULATIONS!
-
-If you've made it this far, you now have:
-- ✅ A working Android development environment
-- ✅ A production-ready RSVP speed reader app
-- ✅ BADGR Technologies branding integrated
-- ✅ Complete understanding of the build process
-- ✅ The ability to customize and extend the app
-
-**Welcome to Android development! 🚀**
-
----
-
-**Built with ❤️ for BADGR Technologies LLC**  
-© 2026 BADGR Technologies LLC. All rights reserved.
-
----
-
-## 📋 QUICK COMMAND REFERENCE
-
-```bash
-# Complete build workflow
+Quick command reference
+bash
+# Full setup path
 cd RSVPReader
 ./setup.sh
 source ~/.bashrc
 android-studio .
 
-# Alternative: Command-line build
+# Command-line build path
 ./gradlew clean build
 ./gradlew installDebug
 
-# Check devices
+# Device visibility
 adb devices
 
-# View logs
+# Filtered log output
 adb logcat | grep BADGR
 
-# Uninstall app
+# Uninstall from a device
 adb uninstall com.badgr.rsvpreader
-```
 
-**Ready to build? Start with ./setup.sh!**
+This guide is designed to get a developer from a clean Ubuntu 24.04 workstation to a running BADGR RSVP Speed Reader build in about an hour, with clear upgrade paths toward a signed release-ready artifact
