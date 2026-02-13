@@ -1,106 +1,157 @@
-## BADGR RSVP Speed Reader - Quick Start Guide
+## BADGR RSVP SPEED READER - QUICK START GUIDE
 
-## Get Running in 5 Minutes
+### GET RUNNING IN 5 MINUTES
+### FOR UBUNTU 24.04
 
-### For Ubuntu 24.04 (Your System)
+---
 
-```bash
-# 1. Run automated setup (installs Java, KVM)
+### STEP 1: RUN AUTOMATED SETUP (INSTALLS JAVA, KVM)
+
 cd /path/to/RSVPReader
 chmod +x setup.sh
 ./setup.sh
 
-# 2. Reload environment variables
+---
+
+### STEP 2: RELOAD ENVIRONMENT VARIABLES
+
 source ~/.bashrc
 
-# 3. Install Android Studio (if not already installed)
+---
+
+### STEP 3: INSTALL ANDROID STUDIO (IF NOT ALREADY INSTALLED)
+
 sudo snap install android-studio --classic
 
-# 4. Launch Android Studio
+---
+
+### STEP 4: LAUNCH ANDROID STUDIO
+
 android-studio
 
-# 5. Open this project
-# File → Open → Navigate to RSVPReader folder → OK
+---
 
-# 6. Wait for Gradle sync (2-3 minutes first time)
+### STEP 5: OPEN THIS PROJECT
 
-# 7. Create Virtual Device
-# Tools → Device Manager → Create Device → Pixel 7 → Download API 34 → Finish
+File → Open → Navigate to RSVPReader folder → OK
 
-# 8. Run the app
-# Click green "Run" button → Select your device → Wait for build
-Alternative: Command Line Build
-bash
-# After Android Studio setup, build from terminal:
+---
+
+### STEP 6: WAIT FOR GRADLE SYNC
+
+First-time sync duration: 2–3 minutes
+
+---
+
+### STEP 7: CREATE VIRTUAL DEVICE
+
+Tools → Device Manager → Create Device → Pixel 7 → Download API 34 → Finish
+
+---
+
+### STEP 8: RUN THE APP
+
+Click green "Run" button → Select your device → Wait for build
+
+---
+
+### ALTERNATIVE: COMMAND LINE BUILD
+
+After Android Studio setup:
+
 cd /path/to/RSVPReader
 
-# Build debug APK
+Build debug APK:
+
 ./gradlew assembleDebug
 
-# Install on connected device/emulator
+Install on connected device/emulator:
+
 ./gradlew installDebug
 
-# APK location:
-# app/build/outputs/apk/debug/app-debug.apk
-Running on Your Phone
-bash
-# 1. Enable USB Debugging on phone
-#    Settings → About → Tap Build Number 7 times
-#    Settings → Developer Options → USB Debugging ON
+APK location:
 
-# 2. Connect phone via USB
+app/build/outputs/apk/debug/app-debug.apk
 
-# 3. Verify connection
+---
+
+## RUNNING ON YOUR PHONE
+
+### STEP 1: ENABLE USB DEBUGGING
+
+Settings → About → Tap Build Number 7 times  
+Settings → Developer Options → USB Debugging ON
+
+### STEP 2: CONNECT PHONE VIA USB
+
+### STEP 3: VERIFY CONNECTION
+
 adb devices
 
-# 4. Install app
+### STEP 4: INSTALL APP
+
 ./gradlew installDebug
-Time Estimates
-Task	Duration
-Java installation	2 min
-Android Studio download	5-10 min
-Android Studio setup	5 min
-Project import & sync	3 min
-First build	3-5 min
-Total	~20 min
-System Check
-Your Hardware (CONFIRMED COMPATIBLE):
 
-AMD Ryzen 5 5500 (12 cores)
+---
 
-16GB RAM (8GB+ required)
+## TIME ESTIMATES
 
-AMD Radeon RX 6500 XT
+Java installation: 2 min  
+Android Studio download: 5–10 min  
+Android Studio setup: 5 min  
+Project import & sync: 3 min  
+First build: 3–5 min  
+Total: ~20 min  
 
-1TB storage (10GB+ required)
+---
 
-Ubuntu 24.04.3 LTS
+## SYSTEM CHECK
 
-Common Issues
+Confirmed compatible hardware:
+
+AMD Ryzen 5 5500 (12 cores)  
+16GB RAM (8GB+ required)  
+AMD Radeon RX 6500 XT  
+1TB storage (10GB+ required)  
+Ubuntu 24.04.3 LTS  
+
+---
+
+## COMMON ISSUES
+
 Build fails with "SDK not found"
-bash
-# Create local.properties manually
+
+Create local.properties manually:
+
 echo "sdk.dir=$HOME/Android/Sdk" > local.properties
+
 Emulator is slow
-bash
-# Enable KVM acceleration (already in setup.sh)
+
+Enable KVM acceleration:
+
 sudo apt install qemu-kvm -y
 sudo adduser $USER kvm
-# Logout and login
+
+Logout and login after adding user to group.
+
 Gradle sync fails
-bash
-# In Android Studio:
-# File → Invalidate Caches → Invalidate and Restart
-Need Help?
-Check README.md for detailed instructions
 
-See Troubleshooting section
+In Android Studio:
 
-Verify all prerequisites are met
+File → Invalidate Caches → Invalidate and Restart
 
-Ready to build? Run ./setup.sh now!
+---
+
+## NEED HELP
+
+Check README.md for detailed instructions  
+See Troubleshooting section  
+Verify all prerequisites are met  
+
+Ready to build?
+
+Run:
+
+./setup.sh
 
 © 2026 BADGR Technologies LLC
-
-text
-undefined
