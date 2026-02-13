@@ -1,7 +1,7 @@
 # BADGR RSVP Speed Reader – Delivery Package
 **Package version:** 1.0.0  
 **Delivery date:** February 10, 2026  
-**Client:** BADGR Technologies LLC  
+**Client:** BADGRTechnologies LLC  
 **Platform:** Android (Kotlin + Jetpack Compose)  
 **Target System:** Ubuntu 24.04.3 LTS
 
@@ -142,4 +142,4 @@ Audit Ready: Full documentation for every major function.
 
 DELIVERY STATUS: COMPLETE & READY FOR USE
 
-© 2026 BADGR Technologies LLC. All rights reserved.
+© 2026 BADGRTechnologies LLC. All rights reserved.
