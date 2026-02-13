@@ -5,7 +5,7 @@
 ![Kotlin](https://img.shields.io/badge/language-Kotlin-blue)
 ![Build Status](https://github.com/Ch405-L9/ReaderRSVP/actions/workflows/android.yml/badge.svg)
 
-**by BADGR Technologies LLC**
+**by BADGRTechnologies LLC**
 
 A high-performance Android speed reading application using Rapid Serial Visual Presentation (RSVP) with Optimal Recognition Point (ORP) technology. **BADGR Bolt** is designed for maximum reading efficiency, allowing you to consume content at lightning speeds.
 
