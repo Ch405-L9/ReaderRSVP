@@ -8,26 +8,26 @@
 ║             ╚═════╝ ╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝               ║
 ║                                                                      ║
 ║                    RSVP SPEED READER v1.0                           ║
-║              by BADGR Technologies LLC                              ║
+║              by BADGRTechnologies LLC                              ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 
-🎉 WELCOME TO YOUR COMPLETE ANDROID RSVP SPEED READING APP!
+ WELCOME TO YOUR COMPLETE ANDROID RSVP SPEED READING APP!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📂 WHAT YOU HAVE
+ WHAT YOU HAVE
 
-✅ Complete Android Studio Project (Kotlin + Jetpack Compose)
-✅ Production-ready code (~500 lines)
-✅ BADGR Technologies branding integrated
-✅ Comprehensive documentation (4 guides)
-✅ Automated setup scripts
-✅ Your company logo included
+> Complete Android Studio Project (Kotlin + Jetpack Compose)
+> Production-ready code (~500 lines)
+> BADGRTechnologies LLC branding integrated
+> Comprehensive documentation (4 guides)
+> Automated setup scripts
+> Your company logo included
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🚀 QUICK START (Choose Your Path)
+QUICK START (Choose Your Path)
 
 ┌─────────────────────────────────────────────────────────────────────┐
 │  PATH 1: FASTEST (5 minutes)                                        │
@@ -58,7 +58,7 @@
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📚 DOCUMENTATION GUIDE
+ DOCUMENTATION GUIDE
 
 ┌───────────────────┬─────────────────────────────────────────────────┐
 │ FILE              │ PURPOSE                                         │
@@ -70,7 +70,7 @@
 │ TECHNICAL.md      │ Architecture & implementation details          │
 └───────────────────┴─────────────────────────────────────────────────┘
 
-📖 RECOMMENDED READING ORDER:
+ RECOMMENDED READING ORDER:
    1. START_HERE.txt (you are here ✓)
    2. PROJECT_SUMMARY.md (big picture)
    3. QUICKSTART.md OR README.md (setup)
@@ -78,7 +78,7 @@
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🛠️ EXECUTABLE SCRIPTS
+ EXECUTABLE SCRIPTS
 
 ┌───────────────┬──────────────────────────────────────────────────┐
 │ SCRIPT        │ WHAT IT DOES                                     │
@@ -88,31 +88,30 @@
 │ gradlew       │ Official Gradle wrapper (build tool)             │
 └───────────────┴──────────────────────────────────────────────────┘
 
-💡 TIP: All .sh files are already executable (chmod +x applied)
+ TIP: All .sh files are already executable (chmod +x applied)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ YOUR SYSTEM COMPATIBILITY
 
-⚙️ YOUR SYSTEM COMPATIBILITY
-
-✅ Hardware: CyberPowerPC Gaming PC
+ Hardware: CyberPowerPC Gaming PC
    • AMD Ryzen 5 5500 (12 cores) ✓
    • 16GB RAM ✓
    • AMD Radeon RX 6500 XT ✓
    • 1TB storage ✓
 
-✅ Software: Ubuntu 24.04.3 LTS
+ Software: Ubuntu 24.04.3 LTS
    • Linux kernel 6.14.0-37 ✓
    • GNOME 46 ✓
    • Wayland ✓
 
-🎯 VERDICT: FULLY COMPATIBLE - Excellent performance expected!
+ VERDICT: FULLY COMPATIBLE - Excellent performance expected!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-✨ APPLICATION FEATURES
+ APPLICATION FEATURES
 
 ┌──────────────────────────────────────────────────────────────────┐
-│  🎯 Core Features                                                │
+│   Core Features                                                │
 ├──────────────────────────────────────────────────────────────────┤
 │  ✓ RSVP Display (one word at a time)                            │
 │  ✓ ORP Highlighting (red letter for optimal fixation)           │
@@ -123,7 +122,7 @@
 └──────────────────────────────────────────────────────────────────┘
 
 ┌──────────────────────────────────────────────────────────────────┐
-│  🏗️ Technical Specs                                              │
+│   Technical Specs                                              │
 ├──────────────────────────────────────────────────────────────────┤
 │  • Language: Kotlin 1.9.20                                       │
 │  • Framework: Jetpack Compose (modern UI)                        │
@@ -134,7 +133,7 @@
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📁 PROJECT STRUCTURE
+ PROJECT STRUCTURE
 
 RSVPReader/
 ├── 📄 START_HERE.txt ............. This orientation guide
@@ -143,20 +142,20 @@ RSVPReader/
 ├── 📄 README.md .................. Full documentation
 ├── 📄 TECHNICAL.md ............... Architecture details
 │
-├── 🔧 setup.sh ................... Automated installer
-├── 🔧 build.sh ................... One-command builder
-├── 🔧 gradlew .................... Gradle wrapper
+├──  setup.sh ................... Automated installer
+├──  build.sh ................... One-command builder
+├──  gradlew .................... Gradle wrapper
 │
-├── 🖼️ BADGR_Logo.png .............. Your company logo
+├── BADGR_Logo.png .............. Your company logo
 │
-├── 📁 app/
-│   ├── 📁 src/main/
-│   │   ├── 📁 java/com/badgr/rsvpreader/
+├──  app/
+│   ├──  src/main/
+│   │   ├──  java/com/badgr/rsvpreader/
 │   │   │   ├── MainActivity.kt .... Main UI (Compose)
 │   │   │   ├── RSVPEngine.kt ...... Core RSVP logic
 │   │   │   └── ui/theme/
 │   │   │       └── Theme.kt ....... BADGR branding
-│   │   ├── 📁 res/
+│   │   ├──  res/
 │   │   │   ├── values/strings.xml
 │   │   │   ├── values/themes.xml
 │   │   │   └── xml/ ............... Config files
@@ -169,7 +168,7 @@ RSVPReader/
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🎯 NEXT STEPS
+ NEXT STEPS
 
 [ ] Step 1: Read PROJECT_SUMMARY.md (5 min)
 [ ] Step 2: Run ./setup.sh (10 min)
@@ -182,7 +181,7 @@ TOTAL TIME: ~30 minutes to first run
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-❓ QUICK FAQ
+ QUICK FAQ
 
 Q: I'm new to Android development. Where do I start?
 A: Perfect! Read QUICKSTART.md → run setup.sh → open in Android Studio
@@ -204,7 +203,7 @@ A: Check README.md → Troubleshooting section (covers all common issues)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🏆 WHAT MAKES THIS SPECIAL
+ WHAT MAKES THIS SPECIAL
 
 ✓ Modern Architecture    (MVVM, StateFlow, Coroutines)
 ✓ Best Practices        (Kotlin idioms, null-safety)
@@ -215,7 +214,7 @@ A: Check README.md → Troubleshooting section (covers all common issues)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🎓 LEARNING RESOURCES (Built-in)
+ LEARNING RESOURCES (Built-in)
 
 The documentation teaches you:
 • Android app structure
@@ -230,7 +229,7 @@ You'll understand every line of code by the end!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-💡 PRO TIPS
+ PRO TIPS
 
 1. Start with QUICKSTART.md if you want to run it ASAP
 2. Read README.md if you want to understand everything
@@ -241,17 +240,17 @@ You'll understand every line of code by the end!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🚨 IMPORTANT REMINDERS
+ IMPORTANT REMINDERS
 
-⚠️  Run 'source ~/.bashrc' after setup.sh
-⚠️  First build takes 3-5 minutes (Gradle downloads dependencies)
-⚠️  Enable KVM for fast emulation (setup.sh does this)
-⚠️  Create AVD before running (Tools → Device Manager)
-⚠️  Allow 10GB+ free disk space
+>  Run 'source ~/.bashrc' after setup.sh
+>  First build takes 3-5 minutes (Gradle downloads dependencies)
+>  Enable KVM for fast emulation (setup.sh does this)
+>  Create AVD before running (Tools → Device Manager)
+>  Allow 10GB+ free disk space
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-✅ SUCCESS CHECKLIST
+ SUCCESS CHECKLIST
 
 You'll know everything is working when:
 [ ] setup.sh completes without errors
@@ -268,7 +267,7 @@ You'll know everything is working when:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🎉 READY TO BEGIN?
+ READY TO BEGIN?
 
 → Open PROJECT_SUMMARY.md for the complete overview
 → OR jump straight to QUICKSTART.md to start building!
@@ -277,9 +276,9 @@ You'll know everything is working when:
 
 ╔══════════════════════════════════════════════════════════════════════╗
 ║                                                                      ║
-║              Built with ❤️ for BADGR Technologies LLC                ║
+║              Built with ❤️ for BADGRTechnologies LLC                ║
 ║                                                                      ║
-║                © 2026 BADGR Technologies LLC                         ║
+║                © 2026 BADGRTechnologies LLC                         ║
 ║                      All rights reserved                             ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
