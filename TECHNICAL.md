@@ -1,6 +1,6 @@
 # BADGR RSVP Reader - Technical Documentation
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 ### Core Components
 
@@ -30,7 +30,7 @@
 
 ---
 
-## 📊 Data Flow
+## Data Flow
 
 ```
 User Input (Text)
@@ -57,7 +57,7 @@ Display word with ORP highlight
 
 ---
 
-## 🧮 ORP Algorithm Details
+## ORP Algorithm Details
 
 ### Optimal Recognition Point Research
 
@@ -95,7 +95,7 @@ buildAnnotatedString {
 
 ---
 
-## ⚙️ Timing Engine
+## Timing Engine
 
 ### Core Formula
 ```
@@ -132,7 +132,7 @@ fun play(scope: CoroutineScope) {
 
 ---
 
-## 🎨 UI/UX Design Principles
+## UI/UX Design Principles
 
 ### BADGR Brand Colors
 ```kotlin
@@ -205,7 +205,7 @@ Text(text = currentWord)
 
 ---
 
-## 🧪 Testing Strategy
+## Testing Strategy
 
 ### Unit Tests (Future v2.0)
 ```kotlin
@@ -229,7 +229,7 @@ fun `test playback controls`() {
 
 ---
 
-## 📈 Performance Optimizations
+## Performance Optimizations
 
 ### Current Implementation
 - ✅ Coroutines (non-blocking)
@@ -245,13 +245,13 @@ fun `test playback controls`() {
 
 ---
 
-## 🔒 Security & Privacy
+## Security & Privacy
 
 ### Current Status
-- ✅ No network access
-- ✅ No data collection
-- ✅ Local processing only
-- ✅ No external dependencies
+- No network access
+- No data collection
+- Local processing only
+- No external dependencies
 
 ### Future Considerations (v2.0)
 - File access permissions (for import)
@@ -260,7 +260,7 @@ fun `test playback controls`() {
 
 ---
 
-## 🚀 Roadmap
+## Roadmap
 
 ### v1.0 (Current - MVP)
 - [x] RSVP display with ORP
@@ -284,7 +284,7 @@ fun `test playback controls`() {
 
 ---
 
-## 🛠️ Build Configuration
+## Build Configuration
 
 ### Gradle Dependencies
 ```kotlin
@@ -332,7 +332,7 @@ release/   → Production builds (ProGuard optimized)
 
 ---
 
-## 📞 Developer Contact
+## Developer Contact
 
 **BADGR Technologies LLC**
 - Project: RSVP Speed Reader
@@ -342,6 +342,6 @@ release/   → Production builds (ProGuard optimized)
 
 ---
 
-**Built with modern Android best practices 🚀**
+**Built with modern Android best practices **
 
-© 2026 BADGR Technologies LLC
+© 2026 BADGRTechnologies LLC
